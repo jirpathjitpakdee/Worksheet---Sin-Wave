@@ -1,0 +1,26 @@
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Calculate the sin and cos values
+  float sinValue = sin(2 * PI * millis() / 360.0);
+  float cosValue = cos(2 * PI * millis() / 360.0);
+
+  float mid = 0.0;
+
+  float wave  = (sinValue + cosValue) / 2.0;
+  sinValue -= wave;
+  cosValue -= wave;
+
+
+
+  Serial.print(sinValue);
+  Serial.print(" ");
+  Serial.print(mid);
+  Serial.print(" ");
+  Serial.println(cosValue);
+
+  // Delay for 10 milliseconds
+  delay(10);
+}
